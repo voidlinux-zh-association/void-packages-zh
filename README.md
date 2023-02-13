@@ -36,3 +36,7 @@ cp -a void-packages-zh/srcpkg/软件包名 void-packages/srcpkgs/
 ./xbps_src pkg 软件包名
 ```
 
+# 其他资源
+- [voidxanmod Kernel](https://notabug.org/Marcoapc/voidxanmodK)
+- [librewolf-voidlinux](https://github.com/index-0/librewolf-voidlinux)
+- [hyprland-void](https://github.com/kruceter/hyprland-void)
