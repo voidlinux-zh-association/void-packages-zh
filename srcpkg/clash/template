@@ -1,0 +1,29 @@
+# Template file for 'clash'
+pkgname=clash
+version=1.13.0
+revision=1
+build_style=go
+go_ldflags="-X github.com/Dreamacro/clash/constant.Version=${version}"
+makedepends="go"
+depends=""
+short_desc="A rule based proxy in Go"
+maintainer="xiarenfan <xiarenfan1998@onionmail.com>"
+license="GPL3"
+homepage="https://github.com/Dreamacro/clash"
+distfiles="https://github.com/Dreamacro/clash/archive/v${version}.tar.gz"
+checksum=dcef53df90d39e150f8da2f96edbf09d29b769ac89ea968699189f3f7ef15f60
+
+do_build() {
+	make VERSION="v${version}" 
+}
+
+do_check() {
+	go test github.com/Dreamacro/clash/...
+}
+
+post_install() {
+	vbin bin/clash-linux-amd64
+	vlicense LICENSE
+	vsv clash
+}
+	
