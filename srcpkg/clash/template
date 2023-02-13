@@ -13,6 +13,24 @@ homepage="https://github.com/Dreamacro/clash"
 distfiles="https://github.com/Dreamacro/clash/archive/v${version}.tar.gz"
 checksum=dcef53df90d39e150f8da2f96edbf09d29b769ac89ea968699189f3f7ef15f60
 
+case "$XBPS_TARGET_MACHINE" in
+	x86_64*)
+		_dist_arch="amd64"
+		;;
+	i686*)
+		_dist_arch="386"
+		;;
+	arm*)
+		_dist_arch="armv6l"
+		;;
+	aarch64*)
+		_dist_arch="arm64"
+		;;
+	ppc64le*)
+		_dist_arch="ppc64le"
+		;;
+esac
+
 do_build() {
 	make VERSION="v${version}" 
 }
@@ -22,7 +40,7 @@ do_check() {
 }
 
 post_install() {
-	vbin bin/clash-linux-amd64
+	vbin bin/clash-linux-${_dist_arch} clash
 	vlicense LICENSE
 	vsv clash
 }
