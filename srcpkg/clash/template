@@ -5,7 +5,6 @@ revision=1
 build_style=go
 go_ldflags="-X github.com/Dreamacro/clash/constant.Version=${version}"
 makedepends="go"
-depends=""
 short_desc="A rule based proxy in Go"
 maintainer="xiarenfan <xiarenfan1998@onionmail.com>"
 license="GPL3"
