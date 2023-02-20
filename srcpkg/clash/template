@@ -4,10 +4,11 @@ version=1.13.0
 revision=1
 build_style=go
 go_ldflags="-X github.com/Dreamacro/clash/constant.Version=${version}"
+go_import_path="github.com/Dreamacro/clash"
 makedepends="go"
-short_desc="A rule based proxy in Go"
+short_desc="Rule based proxy in Go"
 maintainer="xiarenfan <xiarenfan1998@onionmail.com>"
-license="GPL3"
+license="GPL-3.0-only"
 homepage="https://github.com/Dreamacro/clash"
 distfiles="https://github.com/Dreamacro/clash/archive/v${version}.tar.gz"
 checksum=dcef53df90d39e150f8da2f96edbf09d29b769ac89ea968699189f3f7ef15f60
@@ -31,7 +32,7 @@ case "$XBPS_TARGET_MACHINE" in
 esac
 
 do_build() {
-	make VERSION="v${version}" 
+	make VERSION="v${version}"
 }
 
 do_check() {
@@ -43,4 +44,3 @@ post_install() {
 	vlicense LICENSE
 	vsv clash
 }
-	
