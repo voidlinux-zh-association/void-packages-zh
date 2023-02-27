@@ -1,0 +1,19 @@
+# Template file for 'clash-geoip'
+pkgname=clash-geoip
+_pkgname=maxmind-geoip
+version=20230212
+revision=1
+short_desc="GeoLite2 data created by MaxMind"
+maintainer="xiarenfan <xiarenfan1998@onionmail.com>"
+license="custom:Hugware"
+homepage="https://github.com/Dreamacro/maxmind-geoip"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz
+${homepage}/releases/download/${version}/Country.mmdb"
+checksum="0583144b29afde4012690dc95d928cc81d355e2a18eed5d1eda9e21e10bf8b30
+4e799aeada444f856b9b91bc2a62e9b159e90f62482adb39ea4650b0121b459f"
+skip_extraction=Country.mmdb
+restricted=yes
+
+do_install() {
+    vinstall "${XBPS_SRCDISTDIR}/${pkgname}-${version}/Country.mmdb" 0644 etc/clash/Country.mmdb
+}

@@ -3,12 +3,13 @@
 
 ## 软件包列表
 
-| 软件名                        | 详情                     | 是否开源              |
-|------------------------------|-------------------------|----------------------|
-| v2rayA                       | v2ray 代理软件            | 开源                 |
-| electron-netease-cloud-music | 网易云音乐 electron 客户端 | 客户端开源、服务端闭源  |
-| clash                        | 代理软件                  | 开源                 |
-| go-musicfox                  | 网易云音乐命令行第三方客户端 | 客户端开源、服务端闭源  |
+| 软件名                        | 详情                          | 是否开源              |
+|------------------------------|------------------------------|----------------------|
+| v2rayA                       | v2ray 代理软件                | 开源                 |
+| electron-netease-cloud-music | 网易云音乐 electron 客户端      | 客户端开源、服务端闭源  |
+| clash                        | 代理软件                      | 开源                 |
+| go-musicfox                  | 网易云音乐命令行第三方客户端      | 客户端开源、服务端闭源  |
+| clash-geoip                  | 部分代理软件依赖的 GeoLite2 数据 | ？                   |
 
 
 ## 如何使用
@@ -41,6 +42,7 @@ $ git clone https://github.com/voidlinux-zh-association/void-packages-zh
 
 ```
 $ cp -a void-packages-zh/srcpkg/软件包名 void-packages/srcpkgs/
+$ cd void-packages
 $ ./xbps_src pkg 软件包名
 ```
 
