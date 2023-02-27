@@ -1,0 +1,34 @@
+# Template file for 'clash-meta'
+pkgname=clash-meta
+version=1.14.2
+revision=1
+build_style=go
+go_ldflags="linkmode external -extldflags \"${LDFLAGS}\" \
+    -X \"github.com/Dreamacro/clash/constant.Version=${version}\" \
+    -X \"github.com/Dreamacro/clash/constant.BuildTime=${BUILDTIME}\" \
+    " \"
+go_import_path="github.com/MetaCubeX/Clash.Meta"
+makedepends="go"
+short_desc="Another Clash Kernel by MetaCubeX"
+maintainer="xiarenfan <xiarenfan1998@onionmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/MetaCubeX/Clash.Meta"
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+checksum=a184fda3bf8455eacd55757e3d0619e1fd1a8c5b90ed4e4acbcca3efd2398f8c
+
+do_build() {
+    BUILDTIME=$(date -u)
+    GOOS=linux CGO_ENABLED=0 go build \
+    -trimpath \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "${go_ldflags}" \
+    -tags with_gvisor -o ${pkgname}-${version}
+}
+
+post_install() {
+	vbin ${pkgname}-${version} clash-meta
+    vsv clash-meta
+    vinstall "${FILESDIR}/config.yaml" 644 etc/clash-meta
+}
