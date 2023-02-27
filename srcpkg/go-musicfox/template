@@ -1,6 +1,6 @@
 # Template file for 'go-musicfox'
 pkgname=go-musicfox
-version=3.7.0
+version=3.7.2
 revision=1
 build_style=go
 go_ldflags="-s -w -X go-musicfox/pkg/constants.AppVersion=v${version}"
@@ -12,16 +12,16 @@ maintainer="xiarenfan <xiarenfan1998@onionmail.com>"
 license="MIT"
 homepage="https://github.com/anhoder/go-musicfox"
 distfiles="https://github.com/anhoder/go-musicfox/archive/refs/tags/v${version}.tar.gz"
-checksum=35c13355c177f3a48a0b6f7d8524dc33ff7b6153d5424bdb598e88d047d64e06
+checksum=edd3dd575716ab163be7c972e431e12cf0a9662519979184ab05a76b65211efe
 
 do_build() {
-	export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external"
-	export CGO_LDFLAGS="${LDFLAGS}"
-	export CGO_CFLAGS="${CFLAGS}"
-	go build -o ../musicfox -ldflags "${go_ldflags}" cmd/musicfox.go
+        export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external"
+        export CGO_LDFLAGS="${LDFLAGS}"
+        export CGO_CFLAGS="${CFLAGS}"
+        go build -o ../musicfox -ldflags "${go_ldflags}" cmd/musicfox.go
 }
 
 do_install() {
-	vbin ../musicfox
-	vlicense LICENSE
+        vbin ../musicfox
+        vlicense LICENSE
 }
