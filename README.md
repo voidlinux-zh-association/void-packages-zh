@@ -56,3 +56,4 @@ $ xi 软件包名 #确保是在 void-packages 目录中
 - [voidxanmod Kernel](https://notabug.org/Marcoapc/voidxanmodK)
 - [librewolf-voidlinux](https://github.com/index-0/librewolf-voidlinux)
 - [hyprland-void](https://github.com/kruceter/hyprland-void)
+- [cde-for-linux-void](https://github.com/johna23-lab/cde-for-linux-void)
