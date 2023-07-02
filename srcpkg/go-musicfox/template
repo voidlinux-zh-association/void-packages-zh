@@ -1,6 +1,6 @@
 # Template file for 'go-musicfox'
 pkgname=go-musicfox
-version=3.7.2
+version=4.1.2
 revision=1
 build_style=go
 go_ldflags="-s -w -X go-musicfox/pkg/constants.AppVersion=v${version}"
@@ -12,7 +12,7 @@ maintainer="xiarenfan <xiarenfan1998@onionmail.com>"
 license="MIT"
 homepage="https://github.com/anhoder/go-musicfox"
 distfiles="https://github.com/anhoder/go-musicfox/archive/refs/tags/v${version}.tar.gz"
-checksum=edd3dd575716ab163be7c972e431e12cf0a9662519979184ab05a76b65211efe
+checksum="910353d881dd0bbe7284752a27ed7197526b7d9bb6bd02040939b0416f9b66cc"
 
 do_build() {
         export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external"

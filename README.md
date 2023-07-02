@@ -23,7 +23,7 @@
 请先克隆 `xbps_src`：
 
 ```
-$ git clone https://github.com/void-linux/void-packages.git
+$ git clone https://github.com/void-linux/void-packages.git --depth 1
 ```
 
 如果网络不好可以使用：
@@ -43,6 +43,7 @@ $ git clone https://github.com/voidlinux-zh-association/void-packages-zh
 ```
 $ cp -a void-packages-zh/srcpkg/软件包名 void-packages/srcpkgs/
 $ cd void-packages
+$ ./xbps-src binary-bootstrap
 $ ./xbps_src pkg 软件包名
 ```
 
@@ -55,5 +56,5 @@ $ xi 软件包名 #确保是在 void-packages 目录中
 # 其他资源
 - [voidxanmod Kernel](https://notabug.org/Marcoapc/voidxanmodK)
 - [librewolf-voidlinux](https://github.com/index-0/librewolf-voidlinux)
-- [hyprland-void](https://github.com/kruceter/hyprland-void)
+- [hyprland-void](https://github.com/Fadest/hyprland-void)
 - [cde-for-linux-void](https://github.com/johna23-lab/cde-for-linux-void)
